@@ -16,12 +16,12 @@ const DocumentEditor = ({ token, document, onSave }) => {
         e.preventDefault();
         try {
             if (document) {
-                await axios.put(`http://localhost:5000/documents/${document.id}`,
+                await axios.put(`http://localho.st:5000/documents/${document.id}`,
                     { title, content },
                     { headers: { Authorization: `Bearer ${token}` } }
                 );
             } else {
-                await axios.post('http://localhost:5000/documents',
+                await axios.post('http://localho.st:5000/documents',
                     { title, content },
                     { headers: { Authorization: `Bearer ${token}` } }
                 );

@@ -63,7 +63,7 @@ This tutorial will guide you through setting up the environment and configuratio
      ```
      python backend/app.py
      ```
-   - The server should now be running on `http://localhost:5000`.
+   - The server should now be running on `http://localho.st:5000`.
 
 8. **Set Up the Frontend (if applicable)**
    - Navigate to the `frontend` directory.

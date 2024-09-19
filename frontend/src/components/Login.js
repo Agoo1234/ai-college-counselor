@@ -8,7 +8,7 @@ const Login = ({ setToken }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/login', { email, password });
+            const response = await axios.post('http://localho.st:5000/login', { email, password });
             setToken(response.data.access_token);
         } catch (error) {
             console.error('Login failed:', error);

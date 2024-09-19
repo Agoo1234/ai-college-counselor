@@ -1,0 +1,10 @@
+.aider*
+backend/.DS_Store
+/.idea
+.DS_Store
+/backend/.venv
+/backend/models
+/backend/routes
+/frontend/node_modules
+/backend/__pycache__
+/backend/.idea

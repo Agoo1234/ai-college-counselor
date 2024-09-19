@@ -7,7 +7,7 @@ const DocumentList = ({ token, onSelectDocument }) => {
     useEffect(() => {
         const fetchDocuments = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/documents', {
+                const response = await axios.get('http://localho.st:5000/documents', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setDocuments(response.data);
@@ -20,7 +20,7 @@ const DocumentList = ({ token, onSelectDocument }) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/documents/${id}`, {
+            await axios.delete(`http://localho.st:5000/documents/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setDocuments(documents.filter(doc => doc.id !== id));

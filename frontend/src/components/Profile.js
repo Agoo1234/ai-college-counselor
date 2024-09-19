@@ -9,7 +9,7 @@ const Profile = ({ token }) => {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/profile', {
+                const response = await axios.get('http://localho.st:5000/profile', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setProfile(response.data);
@@ -25,7 +25,7 @@ const Profile = ({ token }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put('http://localhost:5000/profile', 
+            await axios.put('http://localho.st:5000/profile', 
                 { name, dream_college: dreamCollege },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
