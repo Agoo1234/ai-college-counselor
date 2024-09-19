@@ -8,7 +8,14 @@ import pymysql
 
 app = Flask(__name__)
 app.config.from_object(Config)
-CORS(app, resources={r"/*": {"origins": "*", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"], "allow_headers": ["Content-Type", "Authorization"]}})
+
+# Configure CORS
+cors = CORS(app, resources={r"/*": {
+    "origins": "*",
+    "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    "allow_headers": ["Content-Type", "Authorization"]
+}})
+
 JWTManager(app)
 
 # Configure SQLAlchemy to use PyMySQL
