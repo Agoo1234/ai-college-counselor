@@ -1,10 +1,14 @@
-from flask_mongoengine import MongoEngine
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
-db = MongoEngine()
+db = SQLAlchemy()
 
-class Document(db.Document):
-    title = db.StringField(required=True)
-    content = db.StringField(required=True)
-    user_id = db.ReferenceField('User', required=True)
-    created_at = db.DateTimeField(required=True)
-    updated_at = db.DateTimeField(required=True)
+class Document(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    user = db.relationship('User', back_populates='documents')
